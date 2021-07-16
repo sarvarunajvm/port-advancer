@@ -1,0 +1,106 @@
+{
+  "name": "port-advancer",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service build",
+    "build:clean": "rimraf ./dist-vue ./dist",
+    "build:lin": "npm run build:lin:clean && npm run build:vue && build --tasks linux-x64 --mirror https://dl.nwjs.io/ .",
+    "build:lin:clean": "rimraf ./dist-vue ./dist/nw-vue-1.7.0-linux-x64 ./dist/nw-vue-1.7.0-linux-x64.zip",
+    "build:mac": "npm run build:mac:clean && npm run build:vue && build --tasks mac-x64 --mirror https://dl.nwjs.io/ .",
+    "build:mac:clean": "rimraf ./dist-vue ./dist/nw-vue-1.7.0-mac-x64 ./dist/nw-vue-1.7.0-linux-x64.zip",
+    "build:nw": "build --concurrent --tasks win-x64,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
+    "build:vue": "vue-cli-service build --modern --dest ./dist-vue",
+    "build:win": "npm run build:win:clean && npm run build:vue && build --tasks win-x64 --mirror https://dl.nwjs.io/ .",
+    "build:win:clean": "rimraf ./dist-vue/** ./dist/nw-vue-1.7.0-win-x64 ./dist/nw-vue-1.7.0-win-x64.zip ./dist/nw-vue-1.7.0-win-x64.7z ./dist/nw-vue-1.7.0-win-x64-Setup.exe",
+    "nw-serve": "nw . -v"
+  },
+  "main": "http://127.0.0.1:1337",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@mdi/font": "^3.6.95",
+    "core-js": "^3.15.2",
+    "http-proxy": "^1.18.1",
+    "roboto-fontface": "*",
+    "vue": "^2.6.14",
+    "vuetify": "^2.5.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-unit-mocha": "^4.5.13",
+    "@vue/cli-plugin-vuex": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "@vue/test-utils": "^1.2.1",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.3.4",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "nw": "^0.54.1",
+    "nwjs-builder-phoenix": "^1.15.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vue-template-compiler": "^2.6.14",
+    "vuetify-loader": "^1.7.0"
+  },
+  "build": {
+    "files": [
+      "node_modules/**/*",
+      "dist-vue/**/*",
+      "files/**/*"
+    ],
+    "output": "./releases",
+    "nwVersion": "0.50.0",
+    "nwFlavor": "sdk",
+    "nwPlatforms": [
+      "win",
+      "mac",
+      "lin"
+    ],
+    "nwArchs": [
+      "x64"
+    ],
+    "strippedProperties": [
+      "label",
+      "private",
+      "scripts",
+      "devDependencies",
+      "build"
+    ],
+    "overriddenProperties": {
+      "main": "./dist-vue/index.html"
+    }
+  },
+  "node-remote": "http://127.0.0.1:1337",
+  "window": {
+    "resizable": false,
+    "toolbar": true,
+    "frame": true,
+    "width": 1020,
+    "height": 650,
+    "position": "center",
+    "icon": "./dist-vue/main/favicon.ico"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

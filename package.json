@@ -40,7 +40,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "nw": "^0.54.1",
     "nwjs-builder-phoenix": "^1.15.0",
-    "sass": "~1.32.0",
+    "sass": "~1.38.1",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.4.1",
     "vue-template-compiler": "^2.6.14",

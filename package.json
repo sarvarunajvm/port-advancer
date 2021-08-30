@@ -37,7 +37,7 @@
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.17.0",
     "nw": "^0.55.0",
     "nwjs-builder-phoenix": "^1.15.0",
     "sass": "~1.38.2",

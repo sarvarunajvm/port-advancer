@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@mdi/font": "^6.1.95",
-    "core-js": "^3.18.1",
+    "core-js": "^3.21.1",
     "http-proxy": "^1.18.1",
     "roboto-fontface": "*",
     "vue": "^2.6.14",

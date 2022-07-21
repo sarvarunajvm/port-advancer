@@ -20,7 +20,7 @@
   "main": "http://127.0.0.1:1337",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@mdi/font": "^6.1.95",
+    "@mdi/font": "^7.0.96",
     "core-js": "^3.18.1",
     "http-proxy": "^1.18.1",
     "roboto-fontface": "*",

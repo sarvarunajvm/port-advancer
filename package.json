@@ -38,7 +38,7 @@
     "chai": "^4.3.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.18.0",
-    "nw": "^0.57.0",
+    "nw": "^0.71.1",
     "nwjs-builder-phoenix": "^1.15.0",
     "sass": "~1.42.1",
     "sass-loader": "^10.0.0",
